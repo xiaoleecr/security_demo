@@ -1,5 +1,7 @@
 package com.lcr.security_demo.config;
 
+import com.lcr.security_demo.filter.MyFilter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,4 +17,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated();
     }
+
+//    @Bean
+//    public MyFilter MyFilter(){
+//        return new MyFilter();
+//    }
 }
