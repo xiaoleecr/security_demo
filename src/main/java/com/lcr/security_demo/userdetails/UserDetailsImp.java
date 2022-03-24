@@ -1,11 +1,12 @@
 package com.lcr.security_demo.userdetails;
 
 import com.lcr.security_demo.entities.User;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-
+@Data
 public class UserDetailsImp implements UserDetails {
     private User user;
 
