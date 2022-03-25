@@ -9,16 +9,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+//@RestController
 public class LoginController {
 
     @Autowired
     LoginService loginService;
 
     @PostMapping("/user/login")
-    public ResultVo login(@RequestBody User user){
+    public ResultVo login(@RequestBody User user) throws Exception {
         ResultVo resultVo = new ResultVo();
         UserDetails userDetails = loginService.login(user);
         return resultVo;
     }
+
 }

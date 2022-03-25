@@ -5,5 +5,5 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public interface LoginService {
 
-    UserDetails login(User user);
+    UserDetails login(User user) throws Exception;
 }
