@@ -19,7 +19,7 @@ public class MyUserDetailsServiceImpl implements MyUserDetailsService, UserDetai
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         UserDetailsImp userDetailsImp = new UserDetailsImp();
-        byte[] bytes = new byte[]{'a','b','3'};
+        //user对象应该通过dao从数据库获取
         User user = new User();
         user.setUsername("张三");
         user.setPassword("123456");
