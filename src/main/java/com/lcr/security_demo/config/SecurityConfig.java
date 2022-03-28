@@ -17,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 //关闭csrf  问题：csrf是个啥？
                 .csrf().disable()
-                //不通过session获取securityContext，为什么？
+                //不通过session获取securityContext（保存了用户信息），为什么？
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
