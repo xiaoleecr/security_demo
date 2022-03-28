@@ -7,7 +7,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MyUserDetailsServiceImpl implements MyUserDetailsService, UserDetailsService {
     /**
      * 该接口应当根据传入的用户名或者账号从数据库中获取到用户记录
