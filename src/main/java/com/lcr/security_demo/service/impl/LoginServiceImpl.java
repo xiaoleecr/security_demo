@@ -26,6 +26,7 @@ public class LoginServiceImpl implements LoginService {
             throw new Exception("用户名或密码错误");
         }
         //根据userid生成jwt，这样下次下次登录时传过来的token，解析后就可以获取到userid，然后根据userid获取到用户权限判断用户是否具备访问各种资源的权限
+        //或者将完整的用户信息存入缓存，以userid为key
 
         //再把jwt存入redis
 
