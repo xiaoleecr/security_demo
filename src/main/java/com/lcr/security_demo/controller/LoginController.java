@@ -17,9 +17,7 @@ public class LoginController {
 
     @PostMapping("/user/login")
     public ResultVo login(@RequestBody User user) throws Exception {
-        ResultVo resultVo = new ResultVo();
-        UserDetails userDetails = loginService.login(user);
-        return resultVo;
+        return loginService.login(user);
     }
 
 }
