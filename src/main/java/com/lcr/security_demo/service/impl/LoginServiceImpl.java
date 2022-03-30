@@ -29,7 +29,7 @@ public class LoginServiceImpl implements LoginService {
         }
         //用jwt工具类将userid生成jwt，这样下次下次登录时传过来的token，解析后就可以获取到userid，然后根据userid从redis缓存获取到用户信息
 
-        //以userid为key，将完整的用户信息存入redis缓存
+        //以userid为key，将完整的用户信息(UserDetails对象)存入redis缓存
 
         //返回token
         ResultVo resultVo = new ResultVo();

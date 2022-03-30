@@ -22,10 +22,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 //对于登录接口允许匿名访问（即不经认证访问）
-                .antMatchers("/user/login").anonymous()
+                .antMatchers("/user/login","/hello").anonymous()
+                //其他请求必须认证后访问（注意authenticated方法这个命名是个完成时态的单词）
                 .anyRequest().authenticated();
     }
 
+    @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
