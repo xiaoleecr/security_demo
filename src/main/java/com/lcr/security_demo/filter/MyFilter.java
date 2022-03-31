@@ -18,7 +18,10 @@ public class MyFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         log.info("执行myfilter");
+        log.info("先处理请求");
+        //该方法执行完后，response对象会有变化
         filterChain.doFilter(servletRequest,servletResponse);
+        log.info("再处理响应");
     }
 
     @Override
