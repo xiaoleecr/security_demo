@@ -25,6 +25,7 @@ public class UserDetailsImp implements UserDetails {
         return user.getUsername();
     }
 
+//    以下的用户状态信息先暂时放开，都设为true
     @Override
     public boolean isAccountNonExpired() {
         return true;

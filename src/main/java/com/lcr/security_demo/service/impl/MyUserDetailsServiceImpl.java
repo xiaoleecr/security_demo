@@ -27,7 +27,7 @@ public class MyUserDetailsServiceImpl implements MyUserDetailsService, UserDetai
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         UserDetailsImp userDetailsImp = new UserDetailsImp();
-        //user对象应该通过dao从数据库获取
+        //user对象应该通过dao从数据库获取，并封装为UserDetails对象返回
 //        User user = userMapper.getUserByUsername(username);
 
 //        userDetailsImp.setUser(user);
