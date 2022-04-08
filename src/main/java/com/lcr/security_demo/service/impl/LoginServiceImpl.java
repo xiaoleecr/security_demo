@@ -2,6 +2,7 @@ package com.lcr.security_demo.service.impl;
 
 import com.lcr.security_demo.entities.User;
 import com.lcr.security_demo.service.LoginService;
+import com.lcr.security_demo.userdetails.UserDetailsImp;
 import com.lcr.security_demo.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,6 +28,8 @@ public class LoginServiceImpl implements LoginService {
         if (null == authenticate){
             throw new Exception("用户名或密码错误");
         }
+
+        UserDetailsImp userDetailsImp = (UserDetailsImp) authenticate.getPrincipal();
         //用jwt工具类将userid生成jwt，这样下次下次登录时传过来的token，解析后就可以获取到userid，然后根据userid从redis缓存获取到用户信息
 
         //以userid为key，将完整的用户信息(UserDetails对象)存入redis缓存
